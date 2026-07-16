@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Yapay Mermer Ürünleri</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #f5f7fa, #c3cfe2);
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      color: #333;
+      margin-bottom: 40px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 15px;
+    }
+
+    .product-name {
+      font-size: 1.2rem;
+      color: #444;
+      margin: 10px 0 5px;
+      font-weight: 600;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 40px;
+      color: #555;
+      text-decoration: none;
+      font-weight: 500;
+      border: 1px solid #aaa;
+      padding: 8px 16px;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+
+    .back-link:hover {
+      background: #eee;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>yapay mermer Ürünleri</h1>
+
+  <div class="product-grid" id="product-grid"></div>
+
+  <a class="back-link" href="tasturleri.html">← Taş Türlerine Geri Dön</a>
+
+  <script src="js/auth.js"></script>
+  <script>
+    requireLogin();
+
+    const yapaymermerler = [
+      { isim: 'dökme mermer', img: 'https://images.pexels.com/photos/6788338/pexels-photo-6788338.jpeg?auto=compress&cs=tinysrgb&w=800' },
+      { isim: 'akrılık esaslı mermer', img: 'https://images.pexels.com/photos/18325786/pexels-photo-18325786.jpeg?auto=compress&cs=tinysrgb&w=800' },
+      { isim: 'kuvars kompoze', img: 'https://images.pexels.com/photos/11255504/pexels-photo-11255504.jpeg?auto=compress&cs=tinysrgb&w=800' },
+      { isim: 'algomera', img: 'https://images.pexels.com/photos/36327398/pexels-photo-36327398.jpeg?auto=compress&cs=tinysrgb&w=800' },
+      { isim: 'mozaik mermer', img: 'https://images.pexels.com/photos/11254985/pexels-photo-11254985.jpeg?auto=compress&cs=tinysrgb&w=800' },
+      { isim: 'elyaf kaplama', img: 'https://images.pexels.com/photos/7794485/pexels-photo-7794485.jpeg?auto=compress&cs=tinysrgb&w=800' },
+      { isim: 'çimstone', img: 'https://images.pexels.com/photos/12106844/pexels-photo-12106844.jpeg?auto=compress&cs=tinysrgb&w=800' },
+    ];
+
+    const grid = document.getElementById('product-grid');
+    yapaymermerler.forEach(urun => {
+      const card = document.createElement('div');
+      card.className = 'product-card';
+      card.innerHTML = `
+        <img src="${urun.img}" alt="${urun.isim}">
+        <div class="product-name">${urun.isim}</div>
+      `;
+      grid.appendChild(card);
+    });
+  </script>
+</body>
+</html>

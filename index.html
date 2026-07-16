@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Alışveriş Sitesi - Anasayfa</title>
+  <style>
+    :root {
+      --primary: #4e54c8;
+      --secondary: #8f94fb;
+      --text: #333;
+      --light: #f9f9f9;
+      --white: #fff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--light);
+      color: var(--text);
+    }
+
+    header {
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      padding: 20px 0;
+      text-align: center;
+      color: white;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: opacity 0.3s;
+    }
+
+    nav a:hover {
+      opacity: 0.8;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+      background-color: var(--white);
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      color: var(--primary);
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #666;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .buttons {
+      margin-top: 30px;
+    }
+
+    .buttons a {
+      text-decoration: none;
+      padding: 12px 25px;
+      margin: 10px;
+      background: var(--primary);
+      color: white;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+
+    .buttons a:hover {
+      background: var(--secondary);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      background-color: #eee;
+      color: #555;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      nav a {
+        display: block;
+        margin: 8px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Kebir mermercilik web Sitesi</h1>
+    <nav>
+      <a href="login.html">login</a>
+      <a href="register.html">register</a>
+      <a href="aboutus.html">Hakkımızda</a>
+      <a href="products.html">ürünlerimiz</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Hoş Geldiniz!</h1>
+    <p>
+      Kebir Mermercilik’e uğradığınız için çok mutluyuz.
+Mermeri sadece taş olarak değil, bir sanat olarak görüyoruz.
+Evinize, ofisinize ya da projenize en yakışan tasarımı birlikte bulalım.
+Sorularınız olursa her zaman buradayız, çekinmeden bize ulaşabilirsiniz.
+Keyifli gezintiler!
+    </p>
+    <div class="buttons">
+      <a href="aboutus.html">Hakkımızda</a>
+      <a href="products.html">ürünleri gör</a>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Alışveriş Sitesi. Tüm hakları saklıdır.
+  </footer>
+
+</body>
+</html>

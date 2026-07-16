@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<title id="page-title">Ürünleri</title>
+<style>
+  body { font-family: 'Poppins', sans-serif; background:#f9f9f9; padding:40px; text-align:center; }
+  h1 { color:#5a3ec8; margin-bottom: 40px; }
+  .urun-listesi {
+    display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; max-width: 1200px; margin: auto;
+  }
+  .urun-kart {
+    background: white; border-radius: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    width: 250px; padding: 20px; transition: transform 0.3s ease;
+  }
+  .urun-kart:hover { transform: translateY(-10px); }
+  .urun-kart img {
+    width: 100%; border-radius: 12px; height: 160px; object-fit: cover;
+  }
+  .urun-kart .isim {
+    margin-top: 15px; font-weight: 600; font-size: 1.1rem; color: #333;
+  }
+  a.geri {
+    display: inline-block; margin-top: 30px; background: #5a3ec8; color: white;
+    padding: 10px 20px; border-radius: 10px; text-decoration: none; transition: background 0.3s;
+  }
+  a.geri:hover { background: #3d2b99; }
+</style>
+</head>
+<body>
+
+<h1 id="page-heading">Ürünleri</h1>
+
+<div class="urun-listesi" id="urun-listesi"></div>
+
+<a href="tasturleri.html" class="geri">← Taş Türleri Sayfasına Dön</a>
+
+<script src="js/auth.js"></script>
+<script>
+  requireLogin();
+
+  const tasTurleri = {
+    1: 'Granit',
+    2: 'Porselen',
+    3: 'Yapay Mermer',
+    4: 'Doğal Mermer',
+  };
+
+  const tasUrunleri = {
+    1: [ // Granit ürünleri
+      { isim: 'Kırmızı Granit', resim: 'kirmizi-granit.jpg' },
+      { isim: 'Gri Granit', resim: 'gri-granit.jpg' },
+      { isim: 'Siyah Granit', resim: 'siyah-granit.jpg' },
+    ],
+    2: [ // Porselen ürünleri
+      { isim: 'Beyaz Porselen', resim: 'beyaz-porselen.jpg' },
+      { isim: 'Krem Porselen', resim: 'krem-porselen.jpg' },
+    ],
+    3: [ // Yapay Mermer ürünleri
+      { isim: 'Yapay Mermer A', resim: 'yapay-a.jpg' },
+      { isim: 'Yapay Mermer B', resim: 'yapay-b.jpg' },
+    ],
+    4: [ // Doğal Mermer ürünleri
+      { isim: 'Beyaz Doğal Mermer', resim: 'beyaz-dogal.jpg' },
+      { isim: 'Siyah Doğal Mermer', resim: 'siyah-dogal.jpg' },
+    ],
+  };
+
+  const params = new URLSearchParams(window.location.search);
+  const turId = params.get('tur_id');
+
+  if (!turId || !tasTurleri[turId]) {
+    window.location.href = 'tasturleri.html';
+  } else {
+    const seciliTurIsmi = tasTurleri[turId];
+    const urunler = tasUrunleri[turId] || [];
+
+    document.getElementById('page-title').textContent = seciliTurIsmi + ' Ürünleri';
+    document.getElementById('page-heading').textContent = seciliTurIsmi + ' Ürünleri';
+
+    const container = document.getElementById('urun-listesi');
+    urunler.forEach(urun => {
+      const card = document.createElement('div');
+      card.className = 'urun-kart';
+      card.innerHTML = `
+        <img src="images/${urun.resim}" alt="${urun.isim}" />
+        <div class="isim">${urun.isim}</div>
+      `;
+      container.appendChild(card);
+    });
+  }
+</script>
+
+</body>
+</html>

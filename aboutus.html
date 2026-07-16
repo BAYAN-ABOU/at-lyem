@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hakkımızda | Mermer Atölyesi</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f4fa;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(rgba(0,40,80,0.7), rgba(0,40,80,0.7)),
+                  url('mermer-arka-plan.jpg') no-repeat center/cover;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+    header p {
+      font-size: 1.3rem;
+      max-width: 700px;
+      margin: auto;
+    }
+    section {
+      max-width: 1200px;
+      margin: 50px auto;
+      padding: 20px;
+    }
+    h2 {
+      font-size: 2rem;
+      color: #0d3b66;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .about-text {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      text-align: center;
+      max-width: 900px;
+      margin: auto;
+      color: #444;
+    }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+    .feature-card {
+      background: white;
+      border-radius: 12px;
+      padding: 25px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-top: 5px solid #1e90ff;
+    }
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    }
+    .feature-card h3 {
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+      color: #0d3b66;
+    }
+    .feature-card p {
+      font-size: 1rem;
+      color: #555;
+    }
+    footer {
+      background: #0d3b66;
+      color: #fff;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 60px;
+    }
+    footer a {
+      color: #1e90ff;
+      text-decoration: none;
+      margin: 0 10px;
+      transition: color 0.3s;
+    }
+    footer a:hover {
+      color: #87cefa;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Mermer Atölyesi</h1>
+    <p>Doğal taşın zarafetini modern tasarımlarla buluşturuyoruz.</p>
+  </header>
+
+  <section>
+    <h2>Hakkımızda</h2>
+    <p class="about-text">
+      <strong>Mermer Atölyesi</strong> olarak yılların deneyimiyle, doğal taşın estetiğini ve sağlamlığını yaşam alanlarınıza taşıyoruz. 
+      Kurulduğumuz günden bu yana kalite, güven ve müşteri memnuniyetini ön planda tutarak; mermer, granit, traverten ve oniks gibi taşlarla 
+      mutfak tezgâhlarından banyo uygulamalarına, yer döşemelerinden özel projelere kadar geniş bir hizmet yelpazesi sunuyoruz.
+    </p>
+  </section>
+
+  <section>
+    <h2>Neden Biz?</h2>
+    <div class="features">
+      <div class="feature-card">
+        <h3>Kalite</h3>
+        <p>En yüksek kalite standartlarında üretim yapıyoruz.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Deneyim</h3>
+        <p>Alanında uzman ve yılların deneyimine sahip kadro.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Zamanında Teslimat</h3>
+        <p>Projelerinizi söz verdiğimiz zamanda teslim ediyoruz.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Tasarım</h3>
+        <p>Özgün ve modern çizgilerle estetik çözümler sunuyoruz.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Müşteri Memnuniyeti</h3>
+        <p>Sizin memnuniyetiniz bizim için en değerli referans.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Mermer Atölyesi | Tüm Hakları Saklıdır</p>
+    <p>
+      <a href="#">WhatsApp</a> | 
+      <a href="#">Instagram</a> | 
+      <a href="#">Google Maps</a>
+    </p>
+  </footer>
+
+</body>
+</html>

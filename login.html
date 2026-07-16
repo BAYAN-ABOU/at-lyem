@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Giriş Yap</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 60px 20px;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .login-container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    width: 100%;
+    max-width: 360px;
+  }
+  h2 {
+    font-weight: 700;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-align: center;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  }
+  input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 25px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+  }
+  input[type=text]:focus, input[type=password]:focus {
+    background: rgba(255,255,255,0.35);
+  }
+  button {
+    width: 100%;
+    padding: 14px;
+    background: #ffd700;
+    color: #333;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(255, 215, 0, 0.5);
+  }
+  button:hover { background: #e6c200; }
+  .error {
+    background: #ff5555aa;
+    padding: 15px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    font-weight: 600;
+    text-align: center;
+    display: none;
+  }
+  .switch-link {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    color: #ffd700;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .switch-link:hover { color: #fff; }
+</style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Giriş Yap</h2>
+    <div class="error" id="error-box"></div>
+    <form id="login-form">
+      <input type="text" id="username" name="username" placeholder="Kullanıcı adı" required />
+      <input type="password" id="password" name="password" placeholder="Şifre" required />
+      <button type="submit">Giriş Yap</button>
+    </form>
+    <a class="switch-link" href="register.html">Hesabın yok mu? Kayıt ol</a>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bcryptjs@2.4.3/dist/bcrypt.min.js"></script>
+  <script src="js/auth.js"></script>
+  <script>
+    const form = document.getElementById('login-form');
+    const errorBox = document.getElementById('error-box');
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      errorBox.style.display = 'none';
+
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value;
+
+      const result = await handleLogin(username, password);
+      if (result.ok) {
+        window.location.href = 'products.html';
+      } else {
+        errorBox.textContent = result.error;
+        errorBox.style.display = 'block';
+      }
+    });
+
+    window.onload = function() {
+      alert("Hoşgeldiniz!");
+    };
+  </script>
+</body>
+</html>
